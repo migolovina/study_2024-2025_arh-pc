@@ -1,0 +1,20 @@
+     1                                  SECTION .data
+     2 00000000 D093D0BED0BBD0BED0-     	hello:		DB 'Головина Мария',10
+     2 00000009 B2D0B8D0BDD0B020D0-
+     2 00000012 9CD0B0D180D0B8D18F-
+     2 0000001B 0A                 
+     3                                  	
+     4                                  	helloLen:	EQU $-hello
+     5                                  	
+     6                                  SECTION .text
+     7                                  	GLOBAL _start
+     8                                  _start:
+     9 00000000 B804000000              	mov eax,4
+    10 00000005 BB01000000              	mov ebx,1
+    11 0000000A B9[00000000]            	mov ecx,hello
+    12 0000000F BA1C000000              	mov edx,helloLen
+    13 00000014 CD80                    	int 80h
+    14                                  	
+    15 00000016 B801000000              	mov eax,1
+    16 0000001B BB00000000              	mov ebx,0
+    17 00000020 CD80                    	int 80h
